@@ -1,1 +1,1 @@
-web: bundle exec ruby reaction_bot.rb -p $PORT
+worker: bundle exec ruby reaction_bot.rb -p $PORT
