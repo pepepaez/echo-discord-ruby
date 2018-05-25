@@ -48,6 +48,7 @@ end
 bot.reaction_add do |event|
   assign_role_by_reaction(event) do | member, role |
     if not member.role?(role)
+      puts role
       member.add_role(role)
     end
   end
