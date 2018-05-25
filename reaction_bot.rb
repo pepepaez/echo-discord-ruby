@@ -40,7 +40,8 @@ def assign_role_by_reaction(event, &block)
   end
   if event.channel.name == 'rules-and-info'
    # if event.emoji.name == ':thumbsup:'
-      block.call event.channel.server.member(event.user.id), '@Pink'
+    role = | r | r.id.to_s == 'Pink'
+      block.call event.channel.server.member(event.user.id), role[0]
    # end
   end
 end
@@ -48,7 +49,6 @@ end
 bot.reaction_add do |event|
   assign_role_by_reaction(event) do | member, role |
     if not member.role?(role)
-      puts role
       member.add_role(role)
     end
   end
