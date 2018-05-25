@@ -40,7 +40,7 @@ def assign_role_by_reaction(event, &block)
   end
   if event.channel.name == 'rules-and-info'
    # if event.emoji.name == ':thumbsup:'
-      block.call event.channel.server.member(event.user.id), 'Beautiful People'
+      block.call event.channel.server.member(event.user.id), 'Pink'
    # end
   end
 end
