@@ -22,7 +22,7 @@ cnf = YAML::load_file(File.join(__dir__, 'config.yml'))
 bot = Discordrb::Bot.new token: cnf['discord']['token'], client_id: cnf['discord']['client_id']
 
 def assign_role_by_reaction(event, &block)
-  if event.channel.name == 'role-assignmen'
+  if event.channel.name == 'role-assignment'
     # check for role_mentions... if we have some, then this is actionable
     if not event.message.role_mentions.empty?
       message_lines = event.message.content.lines
