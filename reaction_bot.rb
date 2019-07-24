@@ -17,9 +17,9 @@
 require 'discordrb'
 require 'yaml'
 
-cnf = YAML::load_file(File.join(__dir__, 'config.yml'))
+#cnf = YAML::load_file(File.join(__dir__, 'config.yml'))
 
-bot = Discordrb::Bot.new token: cnf['discord']['token'], client_id: cnf['discord']['client_id']
+bot = Discordrb::Bot.new token: ENV['bot_token'], client_id: ENV['bot_clientid']
 
 def assign_role_by_reaction(event, &block)
   if event.channel.name == 'role-assignment' || event.channel.name == 'rules-and-info'
