@@ -1,1 +1,1 @@
-worker: bundle exec ruby reaction_bot.rb
+web: bundle exec ruby reaction_bot.rb
